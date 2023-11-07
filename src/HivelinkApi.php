@@ -51,9 +51,8 @@ class HivelinkApi
         if ($code != 200 && is_null($json_response)) {
             throw new HttpException("Request have errors", $code);
         } else {
-            $json_return = $json_response->return;
-            if ($json_return->status != 200) {
-                throw new ApiException($json_return->message, $json_return->status);
+            if ($json_response->status->code != 200) {
+                throw new ApiException($json_response->status->message, $json_response->status->code);
             }
             return $json_response->entries;
         }
@@ -107,7 +106,7 @@ class HivelinkApi
 
     public function getCredit()
     {
-        $path = $this->get_path("account","credit");
+        $path = $this->get_path("account","wallet",'balanced');
         return $this->execute($path);
     } 
     
