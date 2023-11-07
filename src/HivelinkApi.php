@@ -26,9 +26,9 @@ class HivelinkApi
         $this->insecure = $insecure;
     }   
     
-	protected function get_path($method, $base = 'sms')
+	protected function get_path($base = 'sms',$method,$param)
     {
-        return sprintf(self::APIPATH,$this->insecure==true ? "http": "https", $this->apiKey, $base, $method);
+        return sprintf(self::APIPATH,$this->insecure==true ? "http": "https", $this->apiKey, $base, $method,$param);
     }
 	
 	protected function execute($url, $data = null)
@@ -109,6 +109,6 @@ class HivelinkApi
         $path = $this->get_path("account","wallet",'balanced');
         return $this->execute($path);
     } 
-    
+} 
 
 ?>
