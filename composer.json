@@ -1,0 +1,23 @@
+{
+    "name": "hivelink/php",
+    "type": "library",
+    "description": "HiveLink Operator Library for PHP!",
+    "keywords": ["hivelink", "otp", "sms","api"],
+    "homepage": "http://github.com/HiveLinkLib/hivelink-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HiveLink",
+            "email": "info@hivelink.co"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hivelink\\": "src/"
+        }
+    },
+    "minimum-stability" : "stable"
+}
